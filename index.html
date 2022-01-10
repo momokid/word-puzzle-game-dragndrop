@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop App</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Famous Lyrics Game: Abba</h1>
+    <h2>Instruction: Drag the lyrics in the correct order</h2>
+
+    <div class="scores">
+        Remaining Moves: <span id="remMoves">0</span>
+        <br>
+        No. of Moves: <span id="trials">0</span>
+        <br>
+        Right Moves: <span id="correctMove">0</span>
+    </div>
+
+    <div id="jumbledWordsWrapper">
+        <span id="again" data-source-id="again" draggable="true">again</span>
+        <span id="go" data-source-id="go" draggable="true">go</span>
+        <span id="I" data-source-id="I" draggable="true">I</span>
+        <span id="mia" data-source-id="mia" draggable="true">mia</span>
+        <span id="here" data-source-id="here" draggable="true">here</span>
+        <span id="Mamma" data-source-id="Mamma" draggable="true">Mamma</span>
+    </div>
+
+    <div id="orderedWordsWrapper">
+        <span data-target-id="Mamma"></span>
+        <span data-target-id="mia"></span>
+        <span data-target-id="here"></span>
+        <span data-target-id="I"></span>
+        <span data-target-id="go"></span>
+        <span data-target-id="again"></span>
+    </div>
+
+    <script src="js/main.js"></script>
+</body> 
+</html>
