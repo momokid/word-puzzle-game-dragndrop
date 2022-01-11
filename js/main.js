@@ -6,6 +6,8 @@ const remMoveId = document.getElementById('remMoves')
 let draggedElemId
 
 
+console.log(jumbledWords)
+
 let counter = {
     allMoves:0,
     correctMoves:0,
