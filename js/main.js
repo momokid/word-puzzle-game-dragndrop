@@ -68,7 +68,7 @@ function dropHandler(e){
     
     const dataSourceId = e.dataTransfer.getData('text')
     const dataTargetId = e.target.getAttribute('data-target-id')
-    console.warn(dataSourceId, dataTargetId);
+    //console.warn(dataSourceId, dataTargetId);
     anyMoveId.innerHTML = addAnyMove();
 
     if(dataSourceId === dataTargetId){
@@ -78,6 +78,20 @@ function dropHandler(e){
         draggedElemId.setAttribute('draggable',false)
         
         correctMoveId.innerHTML = addCorrectMove();
+
+    }
+
+    console.log(`MAx tries: ${counter.maxTries},Any move: ${counter.allMoves}`)
+
+    if(counter.maxTries < counter.allMoves){
+        alert('Game over.')
+        jumbledWords.setAttribute('disabled','disabled')
+    }
+}
+
+function stopGame(maxMove, anyMove){
+    if(maxMove === anyMove){
+        alert("Game ended")
     }
 }
 
@@ -87,10 +101,6 @@ function addAnyMove(){
 
 function addCorrectMove(){
     let correct_move_counter = ++counter.correctMoves;
-
-    if(correct_move_counter === counter.maxTries){
-        return 
-    }
 
     return correct_move_counter
 }
